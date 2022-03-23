@@ -113,6 +113,115 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Exam",
+			"item": [
+				{
+					"name": "exam",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/exams",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"exams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "exam",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"ABC EXAME\",\n    \"exam_location\": \"ABC PREDIO 02\",\n    \"date\": \"01-01-2022\"\n}\n//medical_appointment_id\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/exams",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"exams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "exam",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"ABC EXAME\",\n    \"exam_location\": \"ABC PREDIO 123456\",\n    \"date\": \"01-01-2022\"\n}\n//medical_appointment_id\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/exams/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"exams",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "exam",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/exams/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"exams",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
