@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "97ad4a41-76d0-4373-9090-fa526d2043eb",
+		"name": "Z_Heath_History_OBC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Medical_Appointment",
+			"item": [
+				{
+					"name": "medical_appointments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/medical_appointments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"medical_appointments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "medical_appointments",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"ABC EXAME\",\n    \"professional_name\": \"ABC DA SILVA\",\n    \"date\": \"01-01-2022\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/medical_appointments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"medical_appointments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "medical_appointments/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"ABC EXAME 4\",\n    \"professional_name\": \"ABC DA SILVA 4\",\n    \"date\": \"01-01-2022\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/medical_appointments/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"medical_appointments",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "medical_appointments/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/medical_appointments/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"medical_appointments",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
