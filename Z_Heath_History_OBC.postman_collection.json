@@ -222,6 +222,115 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Treatment",
+			"item": [
+				{
+					"name": "Treatment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/treatments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"treatments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Treatment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"medical_appointment_id\": 17,\n    \"title\": \"ABC EXAME\",\n    \"description\": \"ABC EXAMEaaa\",\n    \"kind\": \"Exame de alguma coisa\",\n    \"date\": \"01-01-2022\",\n    \"treatment_location\": \"ABC PREDIO 02\"    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/treatments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"treatments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Treatment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"medical_appointment_id\": 17,\n    \"title\": \"ABC EXAME\",\n    \"description\": \"ABC EXAMEaaaaaaaa\",\n    \"kind\": \"Exame de alguma aaacoisa\",\n    \"date\": \"01-01-2022\",\n    \"treatment_location\": \"ABCaaa PREDIO 02\"    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/treatments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"treatments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Treatment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/treatments/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"treatments",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
