@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       
       resources :medical_appointments
       resources :exams
+      resources :treatments
       
     end
   end
