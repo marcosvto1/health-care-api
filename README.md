@@ -1,24 +1,66 @@
-# README
+# About Hackaton - Heath History
+This project is the result of the second Hackaton of Rails Bootcamp prometed by OneBiteCode. The project proposal is a medical consultation history system.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Project Heath History
+The project was built following the business rules from the Hackathon challenge.
 
-Things you may want to cover:
+- Inserir GIF
+<!-- ![heath-history](link-do-gif) -->
 
-* Ruby version
+## Technology Stack
 
-* System dependencies
+- ruby on rails ``7.0.2``
+- ruby ``3.0.3``
+- postgresql
+- React
 
-* Configuration
+# Mockup
+The initial design concept was built on figma.
+<a href="https://github.com/marcosvto1/heath_history_api/blob/main/public/mockup/health.pdf" target="_blank">Acessar Link</a>
 
-* Database creation
 
-* Database initialization
+# Database diagram
+The initial database diagram concept was built on dbdesigner.net
+<a href="https://github.com/marcosvto1/heath_history_api/blob/main/public/diagram-database/diagram-database.png" target="_blank">Acessar Link</a>
 
-* How to run the test suite
+## Set up
 
-* Services (job queues, cache servers, search engines, etc.)
+1. Clone the project
+```
+git clone https://github.com/marcosvto1/heath_history_api.git
+```
+```
+cd heath_history_api
+```
+2. Install dependencies
+``` 
+bundle install
+``` 
+``` 
+rails db:create db:migrate
+``` 
+``` 
+yarn install || npm install
+``` 
 
-* Deployment instructions
+3. Configure .env file with your database information. 
+<p> Create the .env file and configure:
 
-* ...
+![Config-file-env](https://github.com/marcosvto1/heath_history_api/blob/main/public/dotenv/dotenv.png)
+
+4. Start the project
+```
+rails s
+```
+
+5. Create admin user with `rails create_user`. 
+Enter rails console
+
+```
+rails c
+```
+Inserir modelo de criação de usuario.
+
+<!-- ```
+User.create!(name: "Abc", email: "abc@gmail.com", password: "Abc@123", password_confirmation: "Abc@123")
+``` -->
