@@ -1,6 +1,6 @@
 module Api
-	module V1
-    class MedicalAppointmentsController < ApplicationController
+  module V1
+    class MedicalAppointmentsController < ApiController
       before_action :set_medical_appointment, only: %i[ show update destroy ]
 
       # GET /medical_appointments
@@ -44,15 +44,16 @@ module Api
       end
 
       private
-        # Use callbacks to share common setup or constraints between actions.
-        def set_medical_appointment
-          @medical_appointment = MedicalAppointment.find(params[:id])
-        end
 
-        # Only allow a list of trusted parameters through.
-        def medical_appointment_params
-          params.require(:medical_appointment).permit(:id, :title, :professional_name, :date)
-        end
+      # Use callbacks to share common setup or constraints between actions.
+      def set_medical_appointment
+        @medical_appointment = MedicalAppointment.find(params[:id])
+      end
+
+      # Only allow a list of trusted parameters through.
+      def medical_appointment_params
+        params.require(:medical_appointment).permit(:id, :title, :professional_name, :date)
+      end
     end
   end
 end
