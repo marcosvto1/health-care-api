@@ -6,7 +6,7 @@ module Api
       # GET /exams
       # GET /exams.json
       def index
-        @exams = Exam.all
+        @exams = Exam.of(current_user)
       end
 
       # GET /exams/1
@@ -18,6 +18,7 @@ module Api
       # POST /exams.json
       def create
         @exam = Exam.new(exam_params)
+        @exam.user = current_user
 
         if @exam.save
           render json: @exam, status: :created
@@ -46,7 +47,7 @@ module Api
 
       # Use callbacks to share common setup or constraints between actions.
       def set_exam
-        @exam = Exam.find(params[:id])
+        @exam = Exam.of(current_user).find(params[:id])
       end
 
       # Only allow a list of trusted parameters through.
