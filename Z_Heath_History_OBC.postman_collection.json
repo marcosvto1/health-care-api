@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "97ad4a41-76d0-4373-9090-fa526d2043eb",
+		"_postman_id": "cb17a26b-827d-4873-8bf1-6581c5a0d8be",
 		"name": "Z_Heath_History_OBC",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -12,7 +12,33 @@
 					"name": "medical_appointments",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "uid",
+								"value": "{{uid}}",
+								"type": "text"
+							},
+							{
+								"key": "expiry",
+								"value": " 1649296738",
+								"type": "text"
+							},
+							{
+								"key": "token-type",
+								"value": " Bearer",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:3000/api/v1/medical_appointments",
 							"protocol": "http",
@@ -33,7 +59,33 @@
 					"name": "medical_appointments",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "uid",
+								"value": "{{uid}}",
+								"type": "text"
+							},
+							{
+								"key": "expiry",
+								"value": " 1649296738",
+								"type": "text"
+							},
+							{
+								"key": "token-type",
+								"value": " Bearer",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"title\": \"ABC EXAME\",\n    \"professional_name\": \"ABC DA SILVA\",\n    \"date\": \"01-01-2022\"\n}\n",
@@ -63,7 +115,33 @@
 					"name": "medical_appointments/:id",
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "uid",
+								"value": "{{uid}}",
+								"type": "text"
+							},
+							{
+								"key": "expiry",
+								"value": " 1649296738",
+								"type": "text"
+							},
+							{
+								"key": "token-type",
+								"value": " Bearer",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"title\": \"ABC EXAME 4\",\n    \"professional_name\": \"ABC DA SILVA 4\",\n    \"date\": \"01-01-2022\"\n}",
@@ -94,7 +172,33 @@
 					"name": "medical_appointments/:id",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "uid",
+								"value": "{{uid}}",
+								"type": "text"
+							},
+							{
+								"key": "expiry",
+								"value": " 1649296738",
+								"type": "text"
+							},
+							{
+								"key": "token-type",
+								"value": " Bearer",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:3000/api/v1/medical_appointments/6",
 							"protocol": "http",
@@ -121,7 +225,33 @@
 					"name": "exam",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "uid",
+								"value": "{{uid}}",
+								"type": "text"
+							},
+							{
+								"key": "expiry",
+								"value": " 1649296738",
+								"type": "text"
+							},
+							{
+								"key": "token-type",
+								"value": " Bearer",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:3000/api/v1/exams",
 							"protocol": "http",
@@ -142,7 +272,33 @@
 					"name": "exam",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "uid",
+								"value": "{{uid}}",
+								"type": "text"
+							},
+							{
+								"key": "expiry",
+								"value": " 1649296738",
+								"type": "text"
+							},
+							{
+								"key": "token-type",
+								"value": " Bearer",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"title\": \"ABC EXAME\",\n    \"exam_location\": \"ABC PREDIO 02\",\n    \"date\": \"01-01-2022\"\n}\n//medical_appointment_id\n",
@@ -172,7 +328,33 @@
 					"name": "exam",
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "uid",
+								"value": "{{uid}}",
+								"type": "text"
+							},
+							{
+								"key": "expiry",
+								"value": " 1649296738",
+								"type": "text"
+							},
+							{
+								"key": "token-type",
+								"value": " Bearer",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"title\": \"ABC EXAME\",\n    \"exam_location\": \"ABC PREDIO 123456\",\n    \"date\": \"01-01-2022\"\n}\n//medical_appointment_id\n",
@@ -203,7 +385,33 @@
 					"name": "exam",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "uid",
+								"value": "{{uid}}",
+								"type": "text"
+							},
+							{
+								"key": "expiry",
+								"value": " 1649296738",
+								"type": "text"
+							},
+							{
+								"key": "token-type",
+								"value": " Bearer",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:3000/api/v1/exams/3",
 							"protocol": "http",
@@ -230,7 +438,33 @@
 					"name": "Treatment",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "uid",
+								"value": "{{uid}}",
+								"type": "text"
+							},
+							{
+								"key": "expiry",
+								"value": " 1649296738",
+								"type": "text"
+							},
+							{
+								"key": "token-type",
+								"value": " Bearer",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:3000/api/v1/treatments",
 							"protocol": "http",
@@ -251,7 +485,33 @@
 					"name": "Treatment",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "uid",
+								"value": "{{uid}}",
+								"type": "text"
+							},
+							{
+								"key": "expiry",
+								"value": " 1649296738",
+								"type": "text"
+							},
+							{
+								"key": "token-type",
+								"value": " Bearer",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"medical_appointment_id\": 17,\n    \"title\": \"ABC EXAME\",\n    \"description\": \"ABC EXAMEaaa\",\n    \"kind\": \"Exame de alguma coisa\",\n    \"date\": \"01-01-2022\",\n    \"treatment_location\": \"ABC PREDIO 02\"    \n}",
@@ -281,7 +541,33 @@
 					"name": "Treatment",
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "uid",
+								"value": "{{uid}}",
+								"type": "text"
+							},
+							{
+								"key": "expiry",
+								"value": " 1649296738",
+								"type": "text"
+							},
+							{
+								"key": "token-type",
+								"value": " Bearer",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"medical_appointment_id\": 17,\n    \"title\": \"ABC EXAME\",\n    \"description\": \"ABC EXAMEaaaaaaaa\",\n    \"kind\": \"Exame de alguma aaacoisa\",\n    \"date\": \"01-01-2022\",\n    \"treatment_location\": \"ABCaaa PREDIO 02\"    \n}",
@@ -312,7 +598,33 @@
 					"name": "Treatment",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "uid",
+								"value": "{{uid}}",
+								"type": "text"
+							},
+							{
+								"key": "expiry",
+								"value": " 1649296738",
+								"type": "text"
+							},
+							{
+								"key": "token-type",
+								"value": " Bearer",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:3000/api/v1/treatments/2",
 							"protocol": "http",
@@ -331,6 +643,89 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "sign_in",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"any_email@gmail.com\",\n    \"password\": \"123456789\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/sign_in",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"sign_in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign_up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"any_email@gmail.com\",\n    \"password\": \"123456789\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "teste",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "access_token",
+			"value": "bGC79sTRwLlXP7aD7EOX-Q"
+		},
+		{
+			"key": "client",
+			"value": "-Dw-Y41c-B3JeEUMYb53Bw"
 		}
 	]
 }
