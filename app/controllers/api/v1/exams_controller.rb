@@ -1,6 +1,6 @@
 module Api
-	module V1
-    class ExamsController < ApplicationController
+  module V1
+    class ExamsController < ApiController
       before_action :set_exam, only: %i[ show update destroy ]
 
       # GET /exams
@@ -43,15 +43,16 @@ module Api
       end
 
       private
-        # Use callbacks to share common setup or constraints between actions.
-        def set_exam
-          @exam = Exam.find(params[:id])
-        end
 
-        # Only allow a list of trusted parameters through.
-        def exam_params
-          params.require(:exam).permit(:id, :title, :date, :exam_location, :medical_appointment_id)
-        end
+      # Use callbacks to share common setup or constraints between actions.
+      def set_exam
+        @exam = Exam.find(params[:id])
+      end
+
+      # Only allow a list of trusted parameters through.
+      def exam_params
+        params.require(:exam).permit(:id, :title, :date, :exam_location, :medical_appointment_id)
+      end
     end
   end
 end
