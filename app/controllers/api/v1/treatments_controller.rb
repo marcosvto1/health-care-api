@@ -1,6 +1,6 @@
 module Api
-	module V1
-    class TreatmentsController < ApplicationController
+  module V1
+    class TreatmentsController < ApiController
       before_action :set_treatment, only: %i[ show update destroy ]
 
       # GET /treatments
@@ -43,15 +43,16 @@ module Api
       end
 
       private
-        # Use callbacks to share common setup or constraints between actions.
-        def set_treatment
-          @treatment = Treatment.find(params[:id])
-        end
 
-        # Only allow a list of trusted parameters through.
-        def treatment_params
-          params.require(:treatment).permit(:id, :title, :description, :date, :treatment_location, :kind, :medical_appointment_id)
-        end
+      # Use callbacks to share common setup or constraints between actions.
+      def set_treatment
+        @treatment = Treatment.find(params[:id])
+      end
+
+      # Only allow a list of trusted parameters through.
+      def treatment_params
+        params.require(:treatment).permit(:id, :title, :description, :date, :treatment_location, :kind, :medical_appointment_id)
+      end
     end
   end
 end

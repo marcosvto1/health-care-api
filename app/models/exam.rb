@@ -1,5 +1,6 @@
 class Exam < ApplicationRecord
   belongs_to :medical_appointment, optional: true
+  belongs_to :user
 
-  # presence :title, :date, :exam_location, presence: true
+  include OfAuthtable
 end
