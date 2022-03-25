@@ -23,6 +23,7 @@ module Api
         if @exam.save
           render json: @exam, status: :created
         else
+          byebug
           render json: @exam.errors, status: :unprocessable_entity
         end
       end
@@ -52,7 +53,7 @@ module Api
 
       # Only allow a list of trusted parameters through.
       def exam_params
-        params.require(:exam).permit(:id, :title, :date, :exam_location, :medical_appointment_id)
+        params.require(:exam).permit(:id, :title, :date, :exam_location, :medical_appointment_id, files: [])
       end
     end
   end
