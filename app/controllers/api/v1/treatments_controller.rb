@@ -51,7 +51,7 @@ module Api
 
       # Only allow a list of trusted parameters through.
       def treatment_params
-        params.require(:treatment).permit(:id, :title, :description, :date, :treatment_location, :kind, :medical_appointment_id)
+        params.require(:treatment).permit(:id, :title, :description, :date, :treatment_location, :kind, :medical_appointment_id, files: [])
       end
     end
   end

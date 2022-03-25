@@ -1,1 +1,1 @@
-json.partial! "treatments/treatment", treatment: @treatment
+json.partial! "api/v1/treatments/treatment", treatment: @treatment

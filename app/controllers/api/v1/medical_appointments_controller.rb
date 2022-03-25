@@ -12,7 +12,6 @@ module Api
       # GET /medical_appointments/1
       # GET /medical_appointments/1.json
       def show
-        render json: @medical_appointment
       end
 
       # POST /medical_appointments
@@ -52,7 +51,7 @@ module Api
 
       # Only allow a list of trusted parameters through.
       def medical_appointment_params
-        params.require(:medical_appointment).permit(:id, :title, :professional_name, :date)
+        params.require(:medical_appointment).permit(:id, :title, :professional_name, :date, files: [])
       end
     end
   end
