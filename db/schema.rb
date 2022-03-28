@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_24_230820) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_25_231700) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -74,6 +74,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_24_230820) do
     t.index ["medical_appointment_id"], name: "index_treatments_on_medical_appointment_id"
   end
 
+  create_table "user_shares", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "user_share_id", null: false
+    t.datetime "end_date"
+    t.integer "status", default: 1
+    t.boolean "medical_appointment", default: false
+    t.boolean "exam", default: false
+    t.boolean "treatment", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_shares_on_user_id"
+    t.index ["user_share_id"], name: "index_user_shares_on_user_share_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "provider", default: "email", null: false
     t.string "uid", default: "", null: false
@@ -107,4 +121,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_24_230820) do
   add_foreign_key "exams", "medical_appointments"
   add_foreign_key "exams", "users"
   add_foreign_key "treatments", "medical_appointments"
+  add_foreign_key "user_shares", "users"
+  add_foreign_key "user_shares", "users", column: "user_share_id"
 end
