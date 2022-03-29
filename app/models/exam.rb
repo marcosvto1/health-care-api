@@ -4,4 +4,5 @@ class Exam < ApplicationRecord
 
   include OfAuthtable
   include FilesAttachable
+  include Searchable
 end

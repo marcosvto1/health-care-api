@@ -12,4 +12,5 @@ class UserShare < ApplicationRecord
   }
 
   include OfAuthtable
+  include Searchable
 end
