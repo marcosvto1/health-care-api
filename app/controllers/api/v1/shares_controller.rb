@@ -4,7 +4,7 @@ module Api
       include Shareable
 
       def medical_appointments
-        @medical_appointments = MedicalAppointment.all
+        @medical_appointments = MedicalAppointment.page params[:page]
       end
 
       def exams
