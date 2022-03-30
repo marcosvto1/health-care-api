@@ -5,6 +5,11 @@ Rails.application.routes.draw do
       resources :medical_appointments
       resources :exams
       resources :treatments
+      scope :shares do
+        get ":share_id/medical_appointments", to: "shares#medical_appointments"
+        get ":share_id/exams", to: "shares#exams"
+        get ":share_id/treatments", to: "shares#treatments"
+      end
       resources :user_shares
     end
   end
