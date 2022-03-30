@@ -4,7 +4,8 @@ module Api
       include Shareable
 
       def medical_appointments
-        @medical_appointments = MedicalAppointment.all
+        @medical_appointments = MedicalAppointment.where(user_id: @share.user.id)
+        render :medical_appointments
       end
 
       def exams
