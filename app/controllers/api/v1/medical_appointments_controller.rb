@@ -6,7 +6,7 @@ module Api
       # GET /medical_appointments
       # GET /medical_appointments.json
       def index
-        @medical_appointments = MedicalAppointment.all
+        @medical_appointments = MedicalAppointment.of(current_user)
       end
 
       # GET /medical_appointments/1
@@ -18,6 +18,7 @@ module Api
       # POST /medical_appointments.json
       def create
         @medical_appointment = MedicalAppointment.new(medical_appointment_params)
+        @medical_appointment.user = current_user
 
         if @medical_appointment.save
           render json: @medical_appointment, status: :created
@@ -46,7 +47,7 @@ module Api
 
       # Use callbacks to share common setup or constraints between actions.
       def set_medical_appointment
-        @medical_appointment = MedicalAppointment.find(params[:id])
+        @medical_appointment = MedicalAppointment.of(current_user).find(params[:id])
       end
 
       # Only allow a list of trusted parameters through.

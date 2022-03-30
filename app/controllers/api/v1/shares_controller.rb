@@ -9,7 +9,8 @@ module Api
       end
 
       def exams
-        @exams = Exam.all
+        @exams = Exam.where(user_id: @share.user.id)
+        render :exams
       end
 
       def treatments

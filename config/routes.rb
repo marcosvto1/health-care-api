@@ -7,8 +7,8 @@ Rails.application.routes.draw do
       resources :treatments
       scope :shares do
         get ":share_id/medical_appointments", to: "shares#medical_appointments"
-        get "exams", to: "shares#exams"
-        get "treatments", to: "shares#treatments"
+        get ":share_id/exams", to: "shares#exams"
+        get ":share_id/treatments", to: "shares#treatments"
       end
       resources :user_shares
     end
