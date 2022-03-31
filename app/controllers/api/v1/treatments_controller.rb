@@ -6,7 +6,7 @@ module Api
       # GET /treatments
       # GET /treatments.json
       def index
-        @treatments = Treatment.page params[:page]
+        @treatments = Treatment.like(:title, params[:q]).page params[:page]
       end
 
       # GET /treatments/1

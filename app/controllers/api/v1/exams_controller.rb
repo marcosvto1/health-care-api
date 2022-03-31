@@ -6,7 +6,7 @@ module Api
       # GET /exams
       # GET /exams.json
       def index
-        @exams = Exam.of(current_user)
+        @exams = Exam.of(current_user).like(:title, params[:q]).page params[:page]
       end
 
       # GET /exams/1
