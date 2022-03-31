@@ -4,7 +4,9 @@ module Api
       include Shareable
 
       def medical_appointments
-        @medical_appointments = MedicalAppointment.where(user_id: @share.user.id).page params[:page]
+        @medical_appointments = MedicalAppointment.where(user_id: @share.user.id)
+          .like(:title, params[:q])
+          .page params[:page]
         render :medical_appointments
       end
 
