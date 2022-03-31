@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "cb17a26b-827d-4873-8bf1-6581c5a0d8be",
+		"_postman_id": "cf060778-ef46-4445-870b-de5ef3002c65",
 		"name": "Z_Heath_History_OBC",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -9,7 +9,7 @@
 			"name": "Medical_Appointment",
 			"item": [
 				{
-					"name": "index",
+					"name": "medical_appointments",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -56,55 +56,7 @@
 					"response": []
 				},
 				{
-					"name": "show",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "access-token",
-								"value": "{{access_token}}",
-								"type": "text"
-							},
-							{
-								"key": "client",
-								"value": "{{client}}",
-								"type": "text"
-							},
-							{
-								"key": "uid",
-								"value": "{{uid}}",
-								"type": "text"
-							},
-							{
-								"key": "expiry",
-								"value": " 1649296738",
-								"type": "text"
-							},
-							{
-								"key": "token-type",
-								"value": " Bearer",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:3000/api/v1/medical_appointments/3",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"v1",
-								"medical_appointments",
-								"3"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "create",
+					"name": "medical_appointments",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -135,33 +87,13 @@
 							}
 						],
 						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "medical_appointment[title]",
-									"value": "teste",
-									"type": "text"
-								},
-								{
-									"key": "medical_appointment[professional_name]",
-									"value": "teste",
-									"type": "text"
-								},
-								{
-									"key": "medical_appointment[date]",
-									"value": "01-02-2022",
-									"type": "text"
-								},
-								{
-									"key": "medical_appointment[files][]",
-									"type": "file",
-									"src": [
-										"/home/marcos/Pictures/Screenshot from 2022-03-09 20-53-56.png",
-										"/home/marcos/Pictures/Screenshot from 2022-03-08 23-17-53.png",
-										"/home/marcos/Pictures/Screenshot from 2022-03-08 17-27-26.png"
-									]
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"ABC EXAME\",\n    \"professional_name\": \"ABC DA SILVA\",\n    \"date\": \"01-01-2022\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
+							}
 						},
 						"url": {
 							"raw": "http://localhost:3000/api/v1/medical_appointments",
@@ -180,7 +112,7 @@
 					"response": []
 				},
 				{
-					"name": "update",
+					"name": "medical_appointments/:id",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -237,7 +169,7 @@
 					"response": []
 				},
 				{
-					"name": "delete",
+					"name": "medical_appointments/:id",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -337,54 +269,6 @@
 					"response": []
 				},
 				{
-					"name": "show",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "access-token",
-								"value": "{{access_token}}",
-								"type": "text"
-							},
-							{
-								"key": "client",
-								"value": "{{client}}",
-								"type": "text"
-							},
-							{
-								"key": "uid",
-								"value": "{{uid}}",
-								"type": "text"
-							},
-							{
-								"key": "expiry",
-								"value": " 1649296738",
-								"type": "text"
-							},
-							{
-								"key": "token-type",
-								"value": " Bearer",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:3000/api/v1/exams/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"v1",
-								"exams",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "exam",
 					"request": {
 						"method": "POST",
@@ -416,32 +300,13 @@
 							}
 						],
 						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "exam[title]",
-									"value": "PeROSTA",
-									"type": "text"
-								},
-								{
-									"key": "exam[exam_location]",
-									"value": "ABC",
-									"type": "text"
-								},
-								{
-									"key": "exam[date]",
-									"value": "01-01-2020'",
-									"type": "text"
-								},
-								{
-									"key": "exam[files][]",
-									"type": "file",
-									"src": [
-										"/home/marcos/Pictures/Screenshot from 2022-03-08 17-27-10.png",
-										"/home/marcos/Pictures/Screenshot from 2022-02-24 23-24-29.png"
-									]
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"ABC EXAME\",\n    \"exam_location\": \"ABC PREDIO 02\",\n    \"date\": \"01-01-2022\"\n}\n//medical_appointment_id\n",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
+							}
 						},
 						"url": {
 							"raw": "http://localhost:3000/api/v1/exams",
@@ -570,7 +435,7 @@
 			"name": "Treatment",
 			"item": [
 				{
-					"name": "index",
+					"name": "Treatment",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -617,54 +482,6 @@
 					"response": []
 				},
 				{
-					"name": "show",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "access-token",
-								"value": "{{access_token}}",
-								"type": "text"
-							},
-							{
-								"key": "client",
-								"value": "{{client}}",
-								"type": "text"
-							},
-							{
-								"key": "uid",
-								"value": "{{uid}}",
-								"type": "text"
-							},
-							{
-								"key": "expiry",
-								"value": " 1649296738",
-								"type": "text"
-							},
-							{
-								"key": "token-type",
-								"value": " Bearer",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:3000/api/v1/treatments/2",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"v1",
-								"treatments",
-								"2"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Treatment",
 					"request": {
 						"method": "POST",
@@ -696,48 +513,13 @@
 							}
 						],
 						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "treatment[medical_appointment_id]",
-									"value": "1",
-									"type": "text"
-								},
-								{
-									"key": "treatment[title]",
-									"value": "TESTE",
-									"type": "text"
-								},
-								{
-									"key": "treatment[description]",
-									"value": "TESTE",
-									"type": "text"
-								},
-								{
-									"key": "treatment[date]",
-									"value": "01-01-2022",
-									"type": "text"
-								},
-								{
-									"key": "treatment[treatment_location]",
-									"value": "ABC PREDIO 02",
-									"type": "text"
-								},
-								{
-									"key": "treatment[kind]",
-									"value": "Alguma coisa]",
-									"type": "text"
-								},
-								{
-									"key": "treatment[files][]",
-									"type": "file",
-									"src": [
-										"/home/marcos/Pictures/Screenshot from 2022-03-13 20-39-03.png",
-										"/home/marcos/Pictures/Screenshot from 2022-03-11 16-51-46.png",
-										"/home/marcos/Pictures/Screenshot from 2022-03-09 20-53-56.png"
-									]
+							"mode": "raw",
+							"raw": "{\n    \"medical_appointment_id\": 17,\n    \"title\": \"ABC EXAME\",\n    \"description\": \"ABC EXAMEaaa\",\n    \"kind\": \"Exame de alguma coisa\",\n    \"date\": \"01-01-2022\",\n    \"treatment_location\": \"ABC PREDIO 02\"    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
+							}
 						},
 						"url": {
 							"raw": "http://localhost:3000/api/v1/treatments",
@@ -934,6 +716,73 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Reset Password",
+			"item": [
+				{
+					"name": "Forgot",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"any_email@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/password/forgot",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"password",
+								"forgot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"any_email@gmail.com\",\n    \"token\": \"019101\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/password/reset",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"password",
+								"reset"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"variable": [
@@ -944,6 +793,10 @@
 		{
 			"key": "client",
 			"value": "-Dw-Y41c-B3JeEUMYb53Bw"
+		},
+		{
+			"key": "uid",
+			"value": "any_email@gmail.com"
 		}
 	]
 }

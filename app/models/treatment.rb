@@ -5,4 +5,5 @@ class Treatment < ApplicationRecord
 
   include OfAuthtable
   include FilesAttachable
+  include Searchable
 end

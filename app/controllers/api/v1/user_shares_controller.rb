@@ -4,7 +4,7 @@ module Api
       class UserInvalidException < StandardError; end
 
       def index
-        @user_shares = UserShare.of(current_user).all
+        @user_shares = UserShare.of(current_user).page params[:page]
       end
 
       def create

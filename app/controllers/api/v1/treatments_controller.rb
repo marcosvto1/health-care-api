@@ -6,7 +6,7 @@ module Api
       # GET /treatments
       # GET /treatments.json
       def index
-        @treatments = Treatment.all
+        @treatments = Treatment.page params[:page]
       end
 
       # GET /treatments/1

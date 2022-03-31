@@ -6,7 +6,7 @@ module Api
       # GET /medical_appointments
       # GET /medical_appointments.json
       def index
-        @medical_appointments = MedicalAppointment.of(current_user)
+        @medical_appointments = MedicalAppointment.of(current_user).page params[:page]
       end
 
       # GET /medical_appointments/1

@@ -4,4 +4,5 @@ class MedicalAppointment < ApplicationRecord
 
   include FilesAttachable
   include OfAuthtable
+  include Searchable
 end

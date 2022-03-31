@@ -11,6 +11,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 gem "rack-cors"
 gem "devise_token_auth", ">= 1.2.0", git: "https://github.com/lynndylanhurley/devise_token_auth"
+gem 'kaminari'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
