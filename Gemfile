@@ -18,6 +18,7 @@ group :development, :test do
   gem "dotenv-rails"
   gem "awesome_print", require: "ap"
   gem "byebug"
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 end
 
 group :development do

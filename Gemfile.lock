@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: 91950218dd39119e420ca431fc9fae09b53986c7
+  branch: master
+  specs:
+    faker (2.20.0)
+      i18n (>= 1.8.11, < 2)
+
+GIT
   remote: https://github.com/lynndylanhurley/devise_token_auth
   revision: 798255ee7e3fee5cfa2fdc519fd90e281bd9b6f5
   specs:
@@ -213,6 +221,7 @@ DEPENDENCIES
   debug
   devise_token_auth (>= 1.2.0)!
   dotenv-rails
+  faker!
   jbuilder
   kaminari
   pg (~> 1.1)
