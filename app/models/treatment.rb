@@ -4,17 +4,17 @@ class Treatment < ApplicationRecord
 
   validates :title, :description, presence: true
 
-  enum kind: [
-    :hemograma,
-    :colesterol,
-    :creatinina,
-    :papanicolau,
-    :urina,
-    :glicemia,
-    :transaminases,
-    :tsh,
-    :urocultura,
-  ]
+  enum kind: {
+    hemograma: 0,
+    colesterol: 1,
+    creatinina: 2,
+    papanicolau: 3,
+    urina: 4,
+    glicemia: 5,
+    transaminases: 6,
+    tsh: 7,
+    urocultura: 8,
+  }
 
   include OfAuthtable
   include FilesAttachable

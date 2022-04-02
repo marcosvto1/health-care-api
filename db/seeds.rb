@@ -56,7 +56,7 @@ p "-- Iniciando Cadastro de Tratamentos ..."
     description: Faker::Artist.name,
     date: Faker::Date.between(from: "2011-09-23", to: "2022-09-25"),
     treatment_location: Faker::Job.title,
-    kind: "#{i}",
+    kind: %i[hemograma colesterol creatinina papanicolau urina glicemia transaminases tsh urocultura].sample,
     user_id: User.all.sample.id,
   })
 end
