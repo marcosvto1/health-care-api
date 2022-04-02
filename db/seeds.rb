@@ -1,71 +1,71 @@
-Faker::Config.locale = 'pt-BR'
+Faker::Config.locale = "pt-BR"
 
-p '-- Iniciando Cadastro de Usuarios...'
+p "-- Iniciando Cadastro de Usuarios..."
 5.times do |i|
-	user = User.create!({
-		name: Faker::Name.name,
-		email: Faker::Internet.email,
-		password: "1234567#{i}",
-    kind: rand(1..2)
-	})
+  user = User.create!({
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+    password: "1234567#{i}",
+    kind: rand(1..2),
+  })
 end
-p '-- Finalizando Cadastro de Usuarios...'
-p '--------------------------------------'
-p ' '
-p '-- Iniciando Cadastro de Atendimento médico ...'
+p "-- Finalizando Cadastro de Usuarios..."
+p "--------------------------------------"
+p " "
+p "-- Iniciando Cadastro de Atendimento médico ..."
 
 15.times do |i|
-	medical_appointments = MedicalAppointment.create!({
+  medical_appointments = MedicalAppointment.create!({
     user_id: rand(1..5),
-		title: Faker::Name.name,
-		professional_name: Faker::Company.unique.name,
-    date: Faker::Date.between(from: '2001-09-23', to: '2022-09-25')
+    title: Faker::Name.name,
+    professional_name: Faker::Company.unique.name,
+    date: Faker::Date.between(from: "2001-09-23", to: "2022-09-25"),
   })
 end
-p '-- Finalizando Cadastro de Atendimento médico ...'
-p ' '
-p '--------------------------------------'
+p "-- Finalizando Cadastro de Atendimento médico ..."
+p " "
+p "--------------------------------------"
 
-p '-- Iniciando Cadastro de Exames ...'
+p "-- Iniciando Cadastro de Exames ..."
 10.times do |i|
-	exams = Exam.create!({
+  exams = Exam.create!({
     user_id: rand(1..5),
-		title: Faker::Name.name,
-		date: Faker::Date.between(from: '2011-09-23', to: '2022-09-25'),
+    title: Faker::Name.name,
+    date: Faker::Date.between(from: "2011-09-23", to: "2022-09-25"),
     exam_location: Faker::Nation.capital_city,
-    medical_appointment_id: "#{i+1}"
-	})
-end
-p '-- Finalizando Cadastro de Exames ...'
-p ' '
-p '--------------------------------------'
-
-p '-- Iniciando Cadastro de Tratamentos ...'
-10.times do |i|
-	treatments = Treatment.create!({
-    medical_appointment_id: "#{i+1}",
-		title: Faker::Nation.national_sport,
-		description: Faker::Artist.name,
-    date: Faker::Date.between(from: '2011-09-23', to: '2022-09-25'),
-    treatment_location: Faker::Job.title,
-    kind: "#{i}"
+    medical_appointment_id: MedicalAppointment.all.sample.id,
   })
 end
-p '-- Finalizando Cadastro de Tratamentos ...'
-p ' '
-p '--------------------------------------'
+p "-- Finalizando Cadastro de Exames ..."
+p " "
+p "--------------------------------------"
 
-p '-- Iniciando Cadastro de User Share ...'
+p "-- Iniciando Cadastro de Tratamentos ..."
 10.times do |i|
-	userShare = UserShare.create!({
+  treatments = Treatment.create!({
+    medical_appointment_id: MedicalAppointment.all.sample.id,
+    title: Faker::Nation.national_sport,
+    description: Faker::Artist.name,
+    date: Faker::Date.between(from: "2011-09-23", to: "2022-09-25"),
+    treatment_location: Faker::Job.title,
+    kind: "#{i}",
+  })
+end
+p "-- Finalizando Cadastro de Tratamentos ..."
+p " "
+p "--------------------------------------"
+
+p "-- Iniciando Cadastro de User Share ..."
+10.times do |i|
+  userShare = UserShare.create!({
     user_share_id: rand(1..5),
     user_id: rand(1..5),
-    end_date: Faker::Date.between(from: Time.zone.now, to: '2022-12-31'),
+    end_date: Faker::Date.between(from: Time.zone.now, to: "2022-12-31"),
     medical_appointment: [true, false].sample,
     exam: [true, false].sample,
     treatment: [true, false].sample,
     status: rand(1..2),
   })
 end
-p '-- Finalizando Cadastro de User Share ...'
-p '--------------------------------------'
+p "-- Finalizando Cadastro de User Share ..."
+p "--------------------------------------"
