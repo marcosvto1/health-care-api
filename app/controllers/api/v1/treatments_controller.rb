@@ -6,7 +6,7 @@ module Api
       # GET /treatments
       # GET /treatments.json
       def index
-        @treatments = Treatment.like(:title, params[:q]).page params[:page]
+        @treatments = Treatment.of(current_user).like(:title, params[:q]).page params[:page]
       end
 
       # GET /treatments/1
@@ -18,6 +18,7 @@ module Api
       # POST /treatments.json
       def create
         @treatment = Treatment.new(treatment_params)
+        @treatment.user = current_user
 
         if @treatment.save
           render json: @treatment, status: :created
@@ -46,7 +47,7 @@ module Api
 
       # Use callbacks to share common setup or constraints between actions.
       def set_treatment
-        @treatment = Treatment.find(params[:id])
+        @treatment = Treatment.of(current_user).find(params[:id])
       end
 
       # Only allow a list of trusted parameters through.

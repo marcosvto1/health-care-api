@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_30_003400) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_02_010454) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -73,7 +73,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_30_003400) do
     t.bigint "medical_appointment_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
     t.index ["medical_appointment_id"], name: "index_treatments_on_medical_appointment_id"
+    t.index ["user_id"], name: "index_treatments_on_user_id"
   end
 
   create_table "user_shares", force: :cascade do |t|
@@ -124,6 +126,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_30_003400) do
   add_foreign_key "exams", "users"
   add_foreign_key "medical_appointments", "users"
   add_foreign_key "treatments", "medical_appointments"
+  add_foreign_key "treatments", "users"
   add_foreign_key "user_shares", "users"
   add_foreign_key "user_shares", "users", column: "user_share_id"
 end

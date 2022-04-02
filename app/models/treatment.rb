@@ -1,18 +1,19 @@
 class Treatment < ApplicationRecord
   belongs_to :medical_appointment
+  belongs_to :user
 
   validates :title, :description, presence: true
 
-  enum status: [
-    :hemograma, 
-    :colesterol, 
+  enum kind: [
+    :hemograma,
+    :colesterol,
     :creatinina,
     :papanicolau,
     :urina,
     :glicemia,
     :transaminases,
     :tsh,
-    :urocultura
+    :urocultura,
   ]
 
   include OfAuthtable
