@@ -1,19 +1,16 @@
 class Treatment < ApplicationRecord
-  belongs_to :medical_appointment
+  belongs_to :medical_appointment, optional: true
   belongs_to :user
 
   validates :title, :description, presence: true
 
   enum kind: {
-    hemograma: 0,
-    colesterol: 1,
-    creatinina: 2,
-    papanicolau: 3,
-    urina: 4,
-    glicemia: 5,
-    transaminases: 6,
-    tsh: 7,
-    urocultura: 8,
+    remedio: 0,
+    fisioterapia: 1,
+    estetico: 2,
+    odontologico: 3,
+    espiritual: 4,
+    psicoterapico: 5,
   }
 
   include OfAuthtable
