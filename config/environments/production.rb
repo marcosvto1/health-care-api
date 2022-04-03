@@ -88,9 +88,10 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     :user_name => "apikey",
     :password => Rails.application.credentials.dig(:sendgrid, :my_api_key),
-    :address => "smtp.mailtrap.io",
-    :domain => "smtp.mailtrap.io",
-    :port => "2525",
-    :authentication => :cram_md5,
+    :address => "smtp.sendgrid.net",
+    :domain => "smtp.sendgrid.net",
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true,
   }
 end

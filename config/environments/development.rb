@@ -68,12 +68,22 @@ Rails.application.configure do
   # MailCatcher
   # config.action_mailer.smtp_settings = { address: "localhost", port: 1025 }
   config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   :user_name => "9ebd65ee6a6241",
+  #   :password => "7e161fa72694a0",
+  #   :address => "smtp.mailtrap.io",
+  #   :domain => "smtp.mailtrap.io",
+  #   :port => "2525",
+  #   :authentication => :cram_md5,
+  # }
+
   config.action_mailer.smtp_settings = {
-    :user_name => "9ebd65ee6a6241",
-    :password => "7e161fa72694a0",
-    :address => "smtp.mailtrap.io",
-    :domain => "smtp.mailtrap.io",
-    :port => "2525",
-    :authentication => :cram_md5,
+    :user_name => "apikey",
+    :password => Rails.application.credentials.dig(:sendgrid, :my_api_key),
+    :address => "smtp.sendgrid.net",
+    :domain => "heathcare.com.br",
+    :authentication => :login,
+    :port => 587,
+    :enable_starttls_auto => true,
   }
 end
