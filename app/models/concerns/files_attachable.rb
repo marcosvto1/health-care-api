@@ -6,7 +6,7 @@ module FilesAttachable
     has_many_attached :files
 
     def files_url
-      self.files.map { |f| rails_blob_url(f) }
+      self.files.map { |f| {id: f.id, url: rails_blob_url(f)}}
     end
   end
 end

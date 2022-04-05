@@ -34,7 +34,7 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   config.action_mailer.default_url_options = { host: "localhost" }
-  Rails.application.routes.default_url_options[:host] = "localhost"
+  Rails.application.routes.default_url_options[:host] = "localhost:3000"
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
@@ -68,14 +68,7 @@ Rails.application.configure do
   # MailCatcher
   # config.action_mailer.smtp_settings = { address: "localhost", port: 1025 }
   config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = {
-  #   :user_name => "9ebd65ee6a6241",
-  #   :password => "7e161fa72694a0",
-  #   :address => "smtp.mailtrap.io",
-  #   :domain => "smtp.mailtrap.io",
-  #   :port => "2525",
-  #   :authentication => :cram_md5,
-  # }
+
 
   config.action_mailer.smtp_settings = {
     :user_name => "apikey",
