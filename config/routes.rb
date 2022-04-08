@@ -24,6 +24,8 @@ Rails.application.routes.draw do
       post "password/reset", to: "passwords#reset"
 
       get "dashboard", to: "dashboard#index"
+
+      delete "files/:id", to: "removes_files#destroy"
     end
   end
 end
