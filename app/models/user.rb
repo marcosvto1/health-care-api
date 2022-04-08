@@ -7,12 +7,17 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
   include DeviseTokenAuth::Concerns::User
 
-  enum status: [:responsavel, :paciente, :medico]
+  enum kind: {
+    :paciente => 1,
+    :medico => 2,
+  }
+
+  include Searchable
 
   def generate_password_token!
     self.reset_password_token = generate_token
     self.reset_password_sent_at = Time.now.utc
-    save!    
+    save!
   end
 
   def password_token_valid?
@@ -25,10 +30,11 @@ class User < ActiveRecord::Base
     save!
   end
 
+  scope :medico, -> { where(:kind => :medico) }
+
   private
 
   def generate_token
-    SecureRandom.random_number(10**6).to_s.rjust(6, '0')
+    SecureRandom.random_number(10 ** 6).to_s.rjust(6, "0")
   end
-
 end

@@ -12,6 +12,8 @@ Rails.application.routes.draw do
         get ":share_id/treatments", to: "shares#treatments"
       end
       resources :user_shares
+      resources :shared_with_me
+      resources :users, only: [:index, :show]
       scope :shares do
         get "medical_appointments", to: "shares#medical_appointments"
         get "exams", to: "shares#exams"

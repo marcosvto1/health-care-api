@@ -8,3 +8,4 @@ json.medical_appointment user_share.medical_appointment
 json.exam user_share.exam
 json.treatment user_share.treatment
 json.status user_share.status
+json.start_date user_share.created_at.strftime("%d/%m/%Y")
