@@ -2,6 +2,7 @@ module Api
   module V1
     class UserSharesController < ApiController
       class UserInvalidException < StandardError; end
+      class ThereIsAlreadyShareException < StandardError; end
 
       def index
         @user_shares = UserShare.of(current_user).page(params[:page]).order(created_at: :desc)
@@ -14,10 +15,10 @@ module Api
         if @user_share.save
           render :show
         else
-          render json: @user_share.errors
+          render json: { errors: @user_share.errors }, status: :unprocessable_entity
         end
-      rescue UserInvalidException => e
-        render json: { user_shared_id: [e.message] }, status: :unprocessable_entity
+      rescue UserInvalidException, ThereIsAlreadyShareException => e
+        render json: { errors: { user_shared_id: [e.message] } }, status: :unprocessable_entity
       end
 
       def destroy
@@ -38,6 +39,7 @@ module Api
 
       def valid_user_to_share!
         raise UserInvalidException.new("Invalid user") if current_user.id == params[:user_share_id]
+        raise ThereIsAlreadyShareException.new("Já existe um compartilhamento para esse usuário") unless UserShare.find_by(user_share_id: params[:user_share_id], status: :activated, user_id: current_user.id).blank?
       end
     end
   end
