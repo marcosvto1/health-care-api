@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace "api" do
     namespace "v1" do
+      get "me", to: "profiles#me"
       resources :medical_appointments
       resources :exams
       resources :treatments
