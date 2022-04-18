@@ -2,7 +2,7 @@ class AfterDateValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
     return if value.blank?
     current_date = Time.zone.now
-    if (value <= current_date)
+    if (value <= current_date && record[:status] != "cancelled")
       record.errors.add(attribute, options[:message] || "must be after date now")
     end
   end

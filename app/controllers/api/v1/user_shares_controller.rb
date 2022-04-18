@@ -27,7 +27,7 @@ module Api
         if @user_share.save
           render json: {}, status: :no_content
         else
-          render json: @user_share.errors
+          render json: @user_share.errors, status: :unprocessable_entity
         end
       end
 
