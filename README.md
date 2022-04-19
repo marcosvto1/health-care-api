@@ -1,11 +1,10 @@
-# About Hackaton - Heath History
+# About Hackaton - Health Care App
 This project is the result of the second Hackaton of Rails Bootcamp prometed by OneBiteCode. The project proposal is a medical consultation history system.
 
-# Project Heath History
-The project was built following the business rules from the Hackathon challenge.
+# Project Health Care App
+- The project was built following the business rules from the Hackathon challenge.
 
-- Inserir GIF
-<!-- ![heath-history](link-do-gif) -->
+![health-care-app](https://i.ibb.co/fXHmZtH/health-care-app.gif)
 
 ## Technology Stack
 
@@ -16,12 +15,13 @@ The project was built following the business rules from the Hackathon challenge.
 
 # Mockup
 The initial design concept was built on figma.
-<a href="https://github.com/marcosvto1/heath_history_api/blob/main/public/mockup/health.pdf" target="_blank">Acessar Link</a>
+
+<a href="https://github.com/marcosvto1/heath_history_api/blob/main/public/mockup/health.pdf" target="_blank">Access Link</a>
 
 
 # Database diagram
 The initial database diagram concept was built on dbdesigner.net
-<a href="https://github.com/marcosvto1/heath_history_api/blob/main/public/diagram-database/diagram-database.png" target="_blank">Acessar Link</a>
+<a href="https://github.com/marcosvto1/heath_history_api/blob/main/public/diagram-database/diagram-database.png" target="_blank">Access Link</a>
 
 ## Set up
 
@@ -52,15 +52,3 @@ yarn install || npm install
 ```
 rails s
 ```
-
-5. Create admin user with `rails create_user`. 
-Enter rails console
-
-```
-rails c
-```
-Inserir modelo de criação de usuario.
-
-<!-- ```
-User.create!(name: "Abc", email: "abc@gmail.com", password: "Abc@123", password_confirmation: "Abc@123")
-``` -->
